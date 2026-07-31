@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" font-family="Inter, system-ui, Segoe UI, Roboto, sans-serif" role="img" aria-label="The three-layer category model: Market Truth, Category Point of View, and Portfolio Role.">
+  <rect width="760" height="500" fill="#ffffff"/>
+  <text x="380" y="46" text-anchor="middle" font-size="24" font-weight="800" fill="#1F3864" letter-spacing="-0.5">The Three-Layer Category Model</text>
+  <text x="380" y="72" text-anchor="middle" font-size="14" fill="#5c6470">Build the argument from the outside in — the portfolio enters last.</text>
+
+  <!-- order arrow -->
+  <line x1="40" y1="120" x2="40" y2="404" stroke="#2E75B6" stroke-width="2.5"/>
+  <polygon points="40,412 34,398 46,398" fill="#2E75B6"/>
+  <text x="24" y="270" text-anchor="middle" font-size="11" fill="#2E75B6" font-weight="700" transform="rotate(-90 24 270)" letter-spacing="1.5">SEQUENCE</text>
+
+  <!-- Layer 1: Market Truth -->
+  <rect x="70" y="112" width="640" height="96" rx="12" fill="#dbe7f6"/>
+  <circle cx="118" cy="160" r="22" fill="#1F3864"/>
+  <text x="118" y="168" text-anchor="middle" font-size="22" font-weight="800" fill="#ffffff">1</text>
+  <text x="162" y="150" font-size="18" font-weight="700" fill="#1F3864">Market Truth</text>
+  <text x="162" y="176" font-size="13.5" fill="#33454f">The external shift buyers already feel. If they don't recognize it,</text>
+  <text x="162" y="194" font-size="13.5" fill="#33454f">the category will sound invented. This layer must be customer-owned.</text>
+
+  <!-- Layer 2: Category POV -->
+  <rect x="70" y="220" width="640" height="96" rx="12" fill="#6f9bd1"/>
+  <circle cx="118" cy="268" r="22" fill="#1F3864"/>
+  <text x="118" y="276" text-anchor="middle" font-size="22" font-weight="800" fill="#ffffff">2</text>
+  <text x="162" y="258" font-size="18" font-weight="700" fill="#ffffff">Category Point of View</text>
+  <text x="162" y="284" font-size="13.5" fill="#eef4fb">Your interpretation of that shift — a market argument, not a product</text>
+  <text x="162" y="302" font-size="13.5" fill="#eef4fb">claim. This is the language you want analysts and buyers to adopt.</text>
+
+  <!-- Layer 3: Portfolio Role -->
+  <rect x="70" y="328" width="640" height="96" rx="12" fill="#1F3864"/>
+  <circle cx="118" cy="376" r="22" fill="#ffffff"/>
+  <text x="118" y="384" text-anchor="middle" font-size="22" font-weight="800" fill="#1F3864">3</text>
+  <text x="162" y="366" font-size="18" font-weight="700" fill="#ffffff">Portfolio Role</text>
+  <text x="162" y="392" font-size="13.5" fill="#cfe0f4">Where each offering earns the right to win. The products matter —</text>
+  <text x="162" y="410" font-size="13.5" fill="#cfe0f4">but they are now evidence for the argument, not the story itself.</text>
+
+  <text x="380" y="456" text-anchor="middle" font-size="12.5" fill="#5c6470" font-style="italic">Most companies reverse this order — they lead with the portfolio and hope the market infers the strategy.</text>
+</svg>
