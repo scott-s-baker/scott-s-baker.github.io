@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marketing the AI Era to Technical Buyers — Scott Baker</title>
+<meta name="description" content="A POV on marketing AI to skeptical CIOs and CISOs: stop selling the model, start selling the system they can trust. By Scott Baker." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--navy:#1F3864;--accent:#2E75B6;--ink:#1c2126;--grey:#5c6470;--line:#e6e9ef;--soft:#f5f7fa;--maxw:760px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.72;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  .bar{border-bottom:1px solid var(--line)}
+  .bar .in{max-width:var(--maxw);margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+  .back{font-weight:600;font-size:.9rem;color:var(--navy)}
+  .brand{font-weight:800;color:var(--navy)}
+  main{max-width:var(--maxw);margin:0 auto;padding:0 24px 80px}
+  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;margin:52px 0 14px}
+  h1{font-size:2.4rem;line-height:1.12;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:10px}
+  .subtitle{font-size:1.3rem;color:var(--accent);font-weight:600;margin-bottom:18px;line-height:1.3}
+  .byline{display:flex;gap:14px;align-items:center;color:var(--grey);font-size:.92rem;margin-bottom:30px;flex-wrap:wrap}
+  .byline .who{font-weight:600;color:var(--ink)}
+  .abstract{background:var(--soft);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:20px 24px;font-size:1.08rem;color:#33393f;margin-bottom:40px}
+  h2{font-size:1.5rem;color:var(--navy);font-weight:800;letter-spacing:-.01em;margin:44px 0 14px;line-height:1.25}
+  h3{font-size:1.1rem;color:var(--navy);font-weight:700;margin:26px 0 6px}
+  p{font-size:1.075rem;color:#2b3138;margin-bottom:18px}
+  ul{margin:0 0 20px 22px}li{font-size:1.05rem;color:#2b3138;margin-bottom:7px}
+  strong{color:var(--ink)}
+  blockquote{margin:34px 0;padding:8px 0 8px 26px;border-left:4px solid var(--navy);font-size:1.3rem;line-height:1.4;font-weight:600;color:var(--navy)}
+  /* says / hears device */
+  .pair{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:16px 0}
+  .pair .says{background:var(--soft);padding:14px 20px;font-size:1rem;color:var(--grey)}
+  .pair .hears{padding:14px 20px;font-size:1.05rem;color:var(--ink);font-weight:600;border-top:1px solid var(--line)}
+  .pair .lbl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--accent)}
+  /* stack */
+  .stack{margin:26px 0;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .stack .node{width:100%;max-width:360px;text-align:center;padding:10px 14px;border-radius:8px;font-weight:600;font-size:.98rem;background:#eaf1fb;color:var(--navy);border:1px solid #d5e3f5}
+  .stack .node.out{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .stack .arw{color:var(--accent);font-size:1rem;line-height:1}
+  .stack .cap{font-size:.85rem;color:var(--grey);margin-top:8px;font-style:italic;text-align:center}
+  /* phrases columns */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+  @media(max-width:640px){.cols{grid-template-columns:1fr}h1{font-size:1.85rem}}
+  .col{border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .col h4{font-size:.95rem;margin-bottom:10px;font-weight:700}
+  .col.less h4{color:#b23b3b}.col.more h4{color:#1f7a4d}
+  .col ul{margin:0 0 0 18px}.col li{font-size:.98rem;margin-bottom:5px}
+  .bio{display:flex;gap:18px;align-items:flex-start;background:var(--soft);border-radius:12px;padding:24px;margin-top:52px}
+  .bio .dot{flex:0 0 52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem}
+  .bio h4{color:var(--navy);font-size:1.05rem;margin-bottom:6px}.bio p{font-size:.98rem;margin-bottom:10px}
+  .bio a{font-weight:600;margin-right:16px;font-size:.95rem}
+  .src{font-size:.86rem;color:var(--grey);border-top:1px solid var(--line);margin-top:44px;padding-top:16px}
+  .src p{font-size:.86rem;color:var(--grey);margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="in">
+    <a class="back" href="../index.html">← Back to portfolio</a>
+    <span class="brand">Scott&nbsp;Baker</span>
+  </div>
+</div>
+
+<main>
+  <div class="eyebrow">Point of View · AI &amp; Enterprise Marketing</div>
+  <h1>Marketing the AI Era to Technical Buyers</h1>
+  <div class="subtitle">Stop selling the model. Start selling the system they can trust.</div>
+  <div class="byline">
+    <span class="who">Scott Baker</span><span>·</span>
+    <span>Marketing executive, 25+ years in enterprise B2B</span><span>·</span>
+    <span>10 min read</span>
+  </div>
+
+  <div class="abstract">
+    Enterprise AI has crossed a threshold: we are no longer marketing curiosity — we are marketing accountability. This is a POV on why messaging aimed at models, agents, and platforms fails with skeptical CIOs and CISOs, and what replaces it: a discipline built on trusted data, governed autonomy, resilience, and proof. The differentiator in the AI era is not a better model story. It is trust.
+  </div>
+
+  <p>Most AI marketing is aimed at the wrong level of the conversation. It talks about models, agents, copilots, assistants, automation, and platforms as if those words alone create urgency. They do not. A skeptical CIO or CISO does not trust AI because a vendor says the model is powerful. They trust AI when the system around the model is governed, observable, resilient, recoverable, and tied to business outcomes they can defend.</p>
+
+  <blockquote>Enterprise AI has crossed a threshold. We are no longer marketing curiosity. We are marketing accountability.</blockquote>
+
+  <p>Gartner forecasts worldwide IT spending will reach $6.37 trillion in 2026, up 14.2% from 2025, with data center systems projected to grow 62.5% to $822 billion and IaaS projected to grow 29.3% to $287 billion, driven by AI infrastructure, cloud platforms, and intelligent applications. Gartner also described building AI compute capacity as "the largest infrastructure project ever attempted by humanity."<a href="#s1"><sup>1</sup></a></p>
+  <p>That level of spending changes the buyer conversation. When AI was experimental, marketing could lead with possibility. When AI becomes an infrastructure, security, governance, and operating-model decision, marketing has to lead with proof.</p>
+
+  <h2>The problem with most AI marketing</h2>
+  <p>The conventional playbook is predictable. A vendor leads with the model. Then the demo. Then the productivity claim. Then the promise of transformation. The problem is that CIOs and CISOs have seen this movie before.</p>
+  <p>They remember cloud sprawl. They remember shadow IT. They remember digital transformation initiatives that became integration projects. They remember "single pane of glass" platforms that created one more pane. They remember when every vendor claimed to simplify operations while adding another tool, another control plane, another data copy, another skill requirement. AI is now triggering the same reflex.</p>
+
+  <div class="pair"><div class="says"><span class="lbl">Marketing says</span>"AI will transform your business."</div><div class="hears"><span class="lbl">The technical buyer hears</span>"Who owns the risk when this enters production?"</div></div>
+  <div class="pair"><div class="says"><span class="lbl">Marketing says</span>"Agents can automate complex workflows."</div><div class="hears"><span class="lbl">The CISO hears</span>"What access does the agent have, what data does it touch, and who approved the action?"</div></div>
+  <div class="pair"><div class="says"><span class="lbl">Marketing says</span>"Our platform accelerates AI adoption."</div><div class="hears"><span class="lbl">The CIO hears</span>"Will this integrate with the systems I already run, or will this become another silo?"</div></div>
+
+  <p>This is why marketing the AI era requires a different discipline. It is no longer enough to translate technical capabilities into benefits. We have to translate technical systems into trusted operating outcomes.</p>
+
+  <h2>The trust gap is now the marketing gap</h2>
+  <p>The clearest sign that the market has changed is the widening gap between AI investment and AI confidence.</p>
+  <p>IBM's 2025 CEO Study found that 61% of surveyed CEOs are actively adopting AI agents or preparing to implement them at scale, yet only 25% of AI initiatives have delivered expected ROI and only 16% have scaled enterprise-wide. The same study found that 50% of CEOs said rapid investment has left their organizations with disconnected, piecemeal technology.<a href="#s2"><sup>2</sup></a></p>
+
+  <blockquote>Buyers are not rejecting AI. They are rejecting ungoverned complexity.</blockquote>
+
+  <p>IBM's study also found that 68% of surveyed CEOs identify integrated enterprise-wide data architecture as critical for cross-functional collaboration, and 72% view proprietary data as key to unlocking generative AI value.<a href="#s2"><sup>2</sup></a> That means the marketing center of gravity must move. The value is not the model. The value is the ability to make trusted enterprise data operational for AI while maintaining governance, resilience, security, and control. That is the message a skeptical CIO or CISO can believe.</p>
+
+  <h2>Stop marketing AI as a feature</h2>
+  <p>One of the biggest mistakes companies make is treating AI as a product enhancement. They say: AI-powered analytics. AI-enabled infrastructure. AI-driven automation. Agentic workflows. Generative AI assistant. Those phrases may be accurate. They are rarely sufficient.</p>
+  <p>Technical buyers are not asking whether AI is present. They are asking whether AI is safe, useful, governed, scalable, and economically defensible.</p>
+  <ul>
+    <li>A <strong>CIO</strong> cares whether AI improves business performance without creating operational fragmentation.</li>
+    <li>A <strong>CISO</strong> cares whether AI increases the attack surface, exposes sensitive data, or creates unapproved access paths.</li>
+    <li>An <strong>infrastructure leader</strong> cares whether AI workloads can run reliably under real production conditions.</li>
+    <li>A <strong>data leader</strong> cares whether AI can use current, governed, high-quality enterprise data without unnecessary movement or duplication.</li>
+    <li>A <strong>CFO</strong> cares whether AI creates measurable return or simply shifts cost into compute, storage, tokens, cloud services, and operational overhead.</li>
+  </ul>
+  <p>If marketing does not address those questions directly, the message remains interesting but not credible.</p>
+
+  <h2>The new marketing architecture</h2>
+  <p>Marketing AI to technical buyers requires a different architecture. Most marketing starts at the top. The best marketing starts near the bottom.</p>
+  <div class="stack">
+    <div class="node">Model</div><div class="arw">↓</div>
+    <div class="node">Workflow</div><div class="arw">↓</div>
+    <div class="node">Platform</div><div class="arw">↓</div>
+    <div class="node">Data</div><div class="arw">↓</div>
+    <div class="node">Governance</div><div class="arw">↓</div>
+    <div class="node">Resilience</div><div class="arw">↓</div>
+    <div class="node out">Business Outcome</div>
+    <div class="cap">Most marketing starts at the top. The best marketing starts near the bottom.</div>
+  </div>
+  <p>Instead of "our model improves productivity," say: "this capability helps reduce manual triage while preserving auditability, access control, and human approval for high-risk actions." Instead of "our agents automate operations," say: "agents can recommend, assist, or act inside defined policy boundaries, with escalation paths for risk, compliance, and business impact." Instead of "our platform runs AI at scale," say: "the platform helps organizations operationalize AI where trusted data resides while reducing data movement, preserving governance, and improving production readiness." That is the difference between marketing AI and marketing trusted AI adoption.</p>
+
+  <h2>The buyer does not want more AI. The buyer wants less uncertainty.</h2>
+  <p>This is the part many marketing teams miss. CIOs and CISOs are not short on AI ideas. They are short on confidence — confidence that the data is right, that the system will perform, that access is governed, that workloads can recover, that costs will not spiral, and that human teams remain in control.</p>
+  <p>A Team8 survey of more than 110 security leaders found that nearly 70% of enterprises already had AI agents in production, with another 23% planning deployments in 2026. The same survey found that nearly 50% of organizations were still restricting or allow-listing AI tools for employees, reflecting the tension between business pressure to adopt AI and the need for stronger control.<a href="#s3"><sup>3</sup></a></p>
+  <p>The question is no longer "Can AI do this?" The question is "Can I trust AI to do this inside my enterprise?"</p>
+
+  <h2>The technical buyer's new filter</h2>
+  <p>Technical buyers are evaluating AI messages through five filters.</p>
+  <h3>1. Data trust</h3>
+  <p>Where does the data live? How is it governed? Is it current, complete, and contextually relevant? Can sensitive data remain controlled? <strong>Marketing implication:</strong> lead with trusted enterprise data, not generic model performance.</p>
+  <h3>2. Operational control</h3>
+  <p>Who approves an action? What can be automated? What remains human-gated? How are exceptions managed? <strong>Marketing implication:</strong> explain the operating model, not just the automation.</p>
+  <h3>3. Resilience</h3>
+  <p>What happens when the system fails? Can workloads recover? Can data be restored? Can the organization prove recoverability? <strong>Marketing implication:</strong> tie AI adoption to resilience and recovery confidence.</p>
+  <h3>4. Security and governance</h3>
+  <p>What permissions does the AI have? How are non-human identities managed? How is activity logged? How does the organization demonstrate compliance? <strong>Marketing implication:</strong> treat governance as a product value, not a legal footnote.</p>
+  <h3>5. Economic defensibility</h3>
+  <p>What does this cost at scale? What waste does it reduce? How is ROI measured? What existing systems does it optimize rather than replace? <strong>Marketing implication:</strong> move from productivity claims to measurable operating outcomes.</p>
+
+  <h2>From "AI can" to "AI can be trusted to"</h2>
+  <p>"AI can summarize tickets" is not enough. "AI can summarize tickets using approved data sources, within governed access boundaries, with recommendations that require human approval before production changes" is much stronger. "AI can automate infrastructure" is not enough. "AI can automate low-risk remediation while escalating high-blast-radius actions to human operators and preserving a full audit trail" is much stronger. "AI can help developers build applications faster" is not enough. "AI can help developers build applications faster while maintaining code quality, policy compliance, security review, and production readiness" is much stronger.</p>
+  <blockquote>The words after "while" are where trust is built.</blockquote>
+
+  <h2>Why this matters for senior marketing leaders</h2>
+  <p>The AI era will expose weak product marketing. It will expose teams that can write compelling copy but cannot explain the architecture of belief. It will expose campaigns that generate attention but do not change buyer confidence. It will expose organizations that confuse feature velocity with market leadership.</p>
+  <p>For senior marketing leaders, the job is no longer simply to create demand. The job is to shape conviction. That means PMM, portfolio marketing, campaign teams, analyst relations, and sales enablement must align around the same narrative structure: What business outcome is the buyer trying to achieve? What technical constraint prevents it? What risk must the buyer control? What operating model makes the solution trustworthy? What proof demonstrates it works in production? What does the buyer do next? If the marketing does not answer those questions, the buyer will assume the vendor is selling aspiration.</p>
+
+  <h2>What conventional thinking gets wrong</h2>
+  <p>The conventional belief is: AI marketing should make advanced technology easy to understand. That is only half right. The better belief is: <strong>AI marketing should make enterprise risk easier to evaluate.</strong></p>
+  <p>Technical buyers do not need every architectural detail in the first touch. But they do need to see that the vendor understands the operating environment they live in. This is especially true for infrastructure, security, data, and platform categories. These buyers are skeptical by profession — their job is to protect the enterprise from attractive ideas that fail under production conditions. So the marketing must be bold, but not breathless. Simple, but not simplistic. Outcome-led, but not vague. Technical enough to earn trust and strategic enough to earn executive attention.</p>
+
+  <h2>The new language of AI marketing</h2>
+  <div class="cols">
+    <div class="col less"><h4>Use less</h4><ul>
+      <li>AI-powered</li><li>AI-driven</li><li>Revolutionary</li><li>Next-generation</li><li>Unlock productivity</li><li>Transform your business</li><li>Seamless intelligence</li>
+    </ul></div>
+    <div class="col more"><h4>Use more</h4><ul>
+      <li>Governed autonomy</li><li>Trusted enterprise data</li><li>Operational control</li><li>Recovery confidence</li><li>Production readiness</li><li>Policy-bound automation</li><li>Human-gated decisions</li><li>Auditable actions</li><li>Data gravity</li><li>Risk-aware orchestration</li><li>Measurable business outcomes</li>
+    </ul></div>
+  </div>
+  <p>The market is saturated with AI promises. The differentiator is trust.</p>
+
+  <h2>The next 8 to 10 months</h2>
+  <p>Over the next 8 to 10 months, I expect AI marketing to move through three phases.</p>
+  <h3>Phase 1 — The end of generic AI positioning</h3>
+  <p>The market will become less tolerant of broad AI claims. "AI-powered" will keep losing meaning unless tied to a specific workflow, measurable outcome, or risk-controlled operating model. Buyers will push vendors to explain exactly what the AI does, what data it uses, what actions it can take, and how those actions are governed.</p>
+  <h3>Phase 2 — The rise of trust-centered campaigns</h3>
+  <p>The strongest campaigns will center on trust, control, and production readiness — shifting from "what AI does" to "why AI can be trusted in this environment." Expect more campaigns around governed agents, secure AI adoption, recovery confidence, AI-ready data foundations, and operational resilience.</p>
+  <h3>Phase 3 — The repositioning of platforms around outcomes</h3>
+  <p>Vendors will reposition platforms around business outcomes rather than architecture labels. Infrastructure platforms won't just market compute, storage, and networking — they'll market AI operationalization. Security platforms won't just market protection — they'll market AI governance and control. Data platforms won't just market access — they'll market trusted context for AI.</p>
+
+  <blockquote>The AI era will not be won by the vendor with the most exciting model story. It will be won by the vendor that makes AI understandable, governable, recoverable, and trusted enough to become part of how the enterprise actually operates.</blockquote>
+
+  <p>That is where marketing has to go next. Not louder AI — more credible AI. Not more features — more trust. Not more aspiration — more proof.</p>
+
+  <div class="bio">
+    <div class="dot">SB</div>
+    <div>
+      <h4>Scott Baker</h4>
+      <p>Marketing executive with 25+ years leading brand, product marketing, and go-to-market for enterprise B2B technology at IBM, Pure Storage, Hitachi Vantara, and HPE — an engineer by training who turns deeply technical portfolios into categories the market trusts and adopts.</p>
+      <a href="https://www.linkedin.com/in/scott-s-baker/">Connect on LinkedIn →</a>
+      <a href="mailto:sbaker83@gmail.com">Email</a>
+    </div>
+  </div>
+
+  <div class="src">
+    <p id="s1">1. Gartner, worldwide IT spending forecast, 2026 (data center systems and IaaS growth driven by AI infrastructure). <em>Verify exact figures and date against the current Gartner release before publishing.</em> <a href="https://www.gartner.com/en/newsroom">gartner.com/newsroom</a></p>
+    <p id="s2">2. IBM, 2025 CEO Study. <a href="https://newsroom.ibm.com">newsroom.ibm.com</a></p>
+    <p id="s3">3. Team8, survey of 110+ security leaders on enterprise AI-agent adoption. <a href="https://team8.vc">team8.vc</a></p>
+  </div>
+</main>
+
+</body>
+</html>
