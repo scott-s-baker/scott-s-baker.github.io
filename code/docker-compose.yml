@@ -1,0 +1,129 @@
+# version: "3.9"
+
+# Prism DIA — full stack
+#
+# Reproduces the exact running configuration verified via `docker inspect`
+# on 192.168.1.104 (June 2026). If you ever need to recreate the stack from
+# scratch (host rebuild, disk failure, etc.), this file is the source of
+# truth — no env var should need to be guessed or retyped by hand again.
+#
+# Bring up: docker compose up -d
+# Bring up + rebuild api image: docker compose up -d --build
+#
+# IMPORTANT: never `rm -rf` the repo directory while these containers are
+# running. prism-api's code is bind-mounted from ./app on the host, not
+# baked into the image — deleting the directory out from under a running
+# container will crash it on next restart with "Could not import module main".
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: prism-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: prism
+      POSTGRES_PASSWORD: prism
+      POSTGRES_DB: prism
+    ports:
+      - "5432:5432"
+    volumes:
+      - prism_pg_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U prism -d prism"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  weaviate:
+    image: cr.weaviate.io/semitechnologies/weaviate:1.27.0
+    container_name: prism-weaviate
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "50051:50051"
+    environment:
+      QUERY_DEFAULTS_LIMIT: "25"
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
+      DEFAULT_VECTORIZER_MODULE: "none"
+      ENABLE_MODULES: ""
+      CLUSTER_HOSTNAME: "node1"
+    volumes:
+      - prism_weaviate_data:/var/lib/weaviate
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/v1/.well-known/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  prefect:
+    image: prefecthq/prefect:3-latest
+    container_name: prism-prefect
+    restart: unless-stopped
+    command: prefect server start --host 0.0.0.0
+    ports:
+      - "4200:4200"
+    volumes:
+      - prism_prefect_data:/root/.prefect
+
+  api:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: prism-api
+    container_name: prism-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      weaviate:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app:rw
+      - ./config:/app/config:rw
+    environment:
+      # Postgres
+      PG_USER: prism
+      PG_PASSWORD: prism
+      PG_DB: prism
+      PG_HOST: postgres
+      PG_PORT: "5432"
+
+      # Weaviate
+      WEAVIATE_URL: http://weaviate:8080
+
+      # Ollama — single env var. Both main.py's /health check and
+      # llm/ollama_provider.py read OLLAMA_BASE_URL.
+      OLLAMA_BASE_URL: http://192.168.1.121:11434
+      OLLAMA_MODEL: "llama3.1:8b"
+
+      # LLM provider switch
+      LLM_PROVIDER: ollama
+      ANTHROPIC_API_KEY: ""
+      CLAUDE_MODEL: claude-sonnet-4-6
+
+      # Embedding
+      EMBED_MODEL: sentence-transformers/all-MiniLM-L6-v2
+
+      # Governance
+      CONFIG_STALE_DAYS: "90"
+      MANUAL_REVIEW_GATE: "true"
+
+networks:
+  default:
+    name: prism_default
+
+volumes:
+  prism_pg_data:
+    name: prism_pg_data
+    external: true
+  prism_weaviate_data:
+    name: prism_weaviate_data
+    external: true
+  prism_prefect_data:
+    name: prism_prefect_data
+    external: true

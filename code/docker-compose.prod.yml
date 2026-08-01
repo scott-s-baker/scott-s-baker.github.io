@@ -1,0 +1,16 @@
+# Prism DIA — PROD override (192.168.1.104)
+#
+# Usage (on the prod host, /opt/prism, branch main):
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Deliberately minimal: the base docker-compose.yml already pins prod's
+# network (prism_default) and all three data volumes (prism_pg_data,
+# prism_weaviate_data, prism_prefect_data) as external — they are declared
+# nowhere else on purpose. Note the real Postgres volume name is
+# prism_pg_data, NOT prism_pgdata; re-declaring the wrong name here as
+# external would fail every prod `compose up`.
+
+services:
+  api:
+    restart: always
+    env_file: .env.prod
