@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Enterprise Search Calculator — Business Impact (Sample)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root{--navy:#1F3864;--accent:#2E75B6;--muted:#5c6470;--border:#e6e9ef;--soft:#f5f7fa;
+        --green:#2e7d4f;--amber:#b7791f;--red:#b23b3b;--ink:#1c2126;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#eef1f6;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .top-nav{position:sticky;top:0;z-index:100;background:var(--navy);color:#fff;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+  .top-nav .brand{font-weight:800;font-size:14.5px}.top-nav .brand span{color:#9db8e0;font-weight:600}
+  .top-nav a{color:#cdd9ec;font-weight:600;font-size:12.5px;text-decoration:none}.top-nav a:hover{color:#fff}
+  .hero{background:linear-gradient(160deg,#1F3864,#2b4a7e);color:#fff;padding:28px 22px}
+  .hero h1{font-size:23px;font-weight:800;letter-spacing:-.3px}
+  .hero p{color:#cdd9ec;font-size:13.5px;margin-top:6px;max-width:820px}
+  .wrap{max-width:1080px;margin:0 auto;padding:22px}
+  .note{background:#fff8e1;border:1px dashed #e0b400;color:#7a5c00;font-size:12px;padding:9px 13px;border-radius:7px;margin-bottom:18px}
+  .layout{display:grid;grid-template-columns:340px 1fr;gap:20px}
+  @media(max-width:860px){.layout{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(20,30,60,.05)}
+  .card h2{font-size:14px;color:var(--navy);font-weight:800;margin-bottom:4px}
+  .card .sub{font-size:11.5px;color:var(--muted);margin-bottom:16px}
+  .field{margin-bottom:16px}
+  .field label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--ink);margin-bottom:5px}
+  .field label .val{color:var(--accent);font-weight:800}
+  .field input[type=range]{width:100%;accent-color:var(--accent);height:4px}
+  .field .num{width:100%;margin-top:6px;padding:6px 9px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit}
+  .reset{width:100%;margin-top:4px;padding:9px;background:var(--soft);border:1px solid var(--border);border-radius:7px;font-weight:700;font-size:12.5px;color:var(--navy);cursor:pointer}
+  .reset:hover{background:#eaeef4}
+  /* results */
+  .headline{background:linear-gradient(135deg,#1F3864,#2E75B6);color:#fff;border-radius:12px;padding:22px 24px;margin-bottom:18px}
+  .headline .lbl{font-size:12px;color:#cdd9ec;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  .headline .big{font-size:42px;font-weight:800;letter-spacing:-1px;line-height:1.05;margin:4px 0}
+  .headline .ctx{font-size:12.5px;color:#dbe6f7}
+  .rescards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.rescards{grid-template-columns:1fr}}
+  .res{border:1px solid var(--border);border-radius:11px;padding:16px;background:#fff;border-top:3px solid var(--accent)}
+  .res.rev{border-top-color:var(--green)}
+  .res .rlbl{font-size:12px;font-weight:700;color:var(--navy)}
+  .res .rval{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.5px;margin:4px 0}
+  .res .rform{font-size:10.5px;color:var(--muted);line-height:1.35;font-family:ui-monospace,Menlo,Consolas,monospace}
+  .split{display:flex;gap:14px;margin:16px 0 4px;flex-wrap:wrap}
+  .stat{flex:1;min-width:130px;background:var(--soft);border-radius:9px;padding:12px 14px}
+  .stat .v{font-size:19px;font-weight:800;color:var(--navy)}
+  .stat .l{font-size:11px;color:var(--muted)}
+  .legend{font-size:11px;color:var(--muted);margin-top:14px}
+  footer{background:#16294a;color:#8fa6c8;text-align:center;padding:15px;font-size:11.5px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="top-nav"><div class="brand">Enterprise Search Calculator <span>· Business Impact Model</span></div><a href="index.html">← Back to portfolio</a></div>
+<div class="hero">
+  <h1>Enterprise Search — Business Impact Calculator</h1>
+  <p>An interactive model I built to make the cost of poor data findability tangible to an executive buyer. Adjust the inputs to your organization and watch the business case build in real time — the kind of value-selling tool I create to move a technical capability into a boardroom conversation.</p>
+</div>
+<div class="wrap">
+  <div class="note">🧮 Illustrative sample calculator. Assumptions are editable and every result shows its formula — designed to demonstrate business-case construction, not to assert precise figures for any organization.</div>
+  <div class="layout">
+    <!-- INPUTS -->
+    <div class="card">
+      <h2>Your Organization</h2>
+      <div class="sub">Adjust to model your business case.</div>
+
+      <div class="field">
+        <label>Number of employees <span class="val" id="v-emp">1,000</span></label>
+        <input type="range" id="s-emp" min="100" max="50000" step="100" value="1000" oninput="sync('emp',this.value)">
+        <input type="number" class="num" id="n-emp" value="1000" oninput="sync('emp',this.value)">
+      </div>
+      <div class="field">
+        <label>Avg salary + benefits <span class="val" id="v-sal">$80,000</span></label>
+        <input type="range" id="s-sal" min="40000" max="250000" step="1000" value="80000" oninput="sync('sal',this.value)">
+        <input type="number" class="num" id="n-sal" value="80000" oninput="sync('sal',this.value)">
+      </div>
+      <div class="field">
+        <label>Annual revenue per employee <span class="val" id="v-rev">$500,000</span></label>
+        <input type="range" id="s-rev" min="50000" max="2000000" step="10000" value="500000" oninput="sync('rev',this.value)">
+        <input type="number" class="num" id="n-rev" value="500000" oninput="sync('rev',this.value)">
+      </div>
+      <div class="field">
+        <label>Hours/day searching for data <span class="val" id="v-hrs">2.5</span></label>
+        <input type="range" id="s-hrs" min="0" max="6" step="0.25" value="2.5" oninput="sync('hrs',this.value)">
+      </div>
+      <div class="field">
+        <label>% of time enriching / fixing data <span class="val" id="v-enr">8.3%</span></label>
+        <input type="range" id="s-enr" min="0" max="40" step="0.5" value="8.3" oninput="sync('enr',this.value)">
+      </div>
+      <div class="field">
+        <label>% of data that is "hidden" / dark <span class="val" id="v-hid">50%</span></label>
+        <input type="range" id="s-hid" min="0" max="90" step="1" value="50" oninput="sync('hid',this.value)">
+      </div>
+      <button class="reset" onclick="resetAll()">Reset to example values</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div>
+      <div class="headline">
+        <div class="lbl">Total Annual Business Impact</div>
+        <div class="big" id="r-total">$109.8M</div>
+        <div class="ctx" id="r-total-ctx"></div>
+      </div>
+
+      <div class="rescards">
+        <div class="res">
+          <div class="rlbl">Cost of Time Lost to Search</div>
+          <div class="rval" id="r-time">$25.0M</div>
+          <div class="rform">Employees × Salary × (hrs/day searching ÷ 8)</div>
+        </div>
+        <div class="res">
+          <div class="rlbl">Cost of Data Rework & Enrichment</div>
+          <div class="rval" id="r-rework">$6.6M</div>
+          <div class="rform">Employees × Salary × % time enriching data</div>
+        </div>
+        <div class="res rev">
+          <div class="rlbl">Missed Revenue Opportunity (dark data)</div>
+          <div class="rval" id="r-opp">$78.1M</div>
+          <div class="rform">Employees × Rev/employee × (hrs/day ÷ 8) × % hidden</div>
+        </div>
+        <div class="res">
+          <div class="rlbl">Hard Productivity Cost (subtotal)</div>
+          <div class="rval" id="r-hard">$31.6M</div>
+          <div class="rform">Time Lost + Data Rework</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="split">
+          <div class="stat"><div class="v" id="r-peremp">$109,765</div><div class="l">Impact per employee / year</div></div>
+          <div class="stat"><div class="v" id="r-pctpay">40%</div><div class="l">Hard cost as % of payroll</div></div>
+          <div class="stat"><div class="v" id="r-timepct">39.5%</div><div class="l">Work time lost to data friction</div></div>
+        </div>
+        <div class="legend"><b>How to read it:</b> the first two figures are hard, out-of-pocket productivity costs and are additive. "Missed Revenue Opportunity" is an opportunity-cost lens (revenue capacity consumed by dark-data friction), shown separately and included in the headline total. All assumptions are yours to change.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>Illustrative business-impact model · Built by Scott Baker to demonstrate value-case construction</footer>
+
+<script>
+const DEFAULTS = {emp:1000, sal:80000, rev:500000, hrs:2.5, enr:8.3, hid:50};
+const state = {...DEFAULTS};
+
+function fmtMoney(n){ // abbreviated $ for big figures
+  const a=Math.abs(n);
+  if(a>=1e9) return '$'+(n/1e9).toFixed(1)+'B';
+  if(a>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
+  if(a>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
+  return '$'+Math.round(n);
+}
+function fmtFull(n){ return '$'+Math.round(n).toLocaleString(); }
+
+function sync(key,val){
+  val=parseFloat(val); if(isNaN(val)) return;
+  state[key]=val;
+  // keep slider + number in sync where both exist
+  ['emp','sal','rev'].forEach(k=>{
+    const s=document.getElementById('s-'+k), n=document.getElementById('n-'+k);
+    if(s&&k===key) s.value=val; if(n&&k===key) n.value=val;
+  });
+  const s=document.getElementById('s-'+key); if(s) s.value=val;
+  render();
+}
+function resetAll(){
+  Object.assign(state,DEFAULTS);
+  for(const k in DEFAULTS){
+    const s=document.getElementById('s-'+k), n=document.getElementById('n-'+k);
+    if(s) s.value=DEFAULTS[k]; if(n) n.value=DEFAULTS[k];
+  }
+  render();
+}
+function render(){
+  const {emp,sal,rev,hrs,enr,hid}=state;
+  const fracDay = hrs/8;            // share of an 8-hr day spent searching
+  const pctEnr = enr/100;
+  const pctHid = hid/100;
+
+  const timeLost = emp*sal*fracDay;
+  const rework   = emp*sal*pctEnr;
+  const opp      = emp*rev*fracDay*pctHid;
+  const hard     = timeLost + rework;
+  const total    = hard + opp;
+  const payroll  = emp*sal;
+
+  // input labels
+  document.getElementById('v-emp').textContent = Math.round(emp).toLocaleString();
+  document.getElementById('v-sal').textContent = fmtFull(sal);
+  document.getElementById('v-rev').textContent = fmtFull(rev);
+  document.getElementById('v-hrs').textContent = hrs.toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1');
+  document.getElementById('v-enr').textContent = enr.toFixed(1)+'%';
+  document.getElementById('v-hid').textContent = Math.round(hid)+'%';
+
+  // results
+  document.getElementById('r-total').textContent  = fmtMoney(total);
+  document.getElementById('r-time').textContent   = fmtMoney(timeLost);
+  document.getElementById('r-rework').textContent = fmtMoney(rework);
+  document.getElementById('r-opp').textContent    = fmtMoney(opp);
+  document.getElementById('r-hard').textContent   = fmtMoney(hard);
+  document.getElementById('r-total-ctx').textContent =
+    fmtFull(total)+' per year — '+fmtMoney(hard)+' hard cost + '+fmtMoney(opp)+' revenue opportunity at risk.';
+
+  document.getElementById('r-peremp').textContent = fmtFull(total/emp);
+  document.getElementById('r-pctpay').textContent = payroll? Math.round(hard/payroll*100)+'%' : '—';
+  document.getElementById('r-timepct').textContent = ((fracDay+pctEnr)*100).toFixed(1)+'%';
+}
+render();
+</script>
+</body>
+</html>
