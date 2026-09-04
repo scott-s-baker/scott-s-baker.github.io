@@ -29,38 +29,22 @@
   @media(max-width:640px){.navlinks{display:none}}
 
   /* HERO */
-  header.hero{background:linear-gradient(160deg,#1F3864 0%,#2b4a7e 100%);color:#fff;padding:64px 0 60px}
-  header.hero .wrap{display:flex;align-items:center;gap:52px}
-  .hero-text{flex:1;min-width:0}
+  header.hero{background:linear-gradient(160deg,#1F3864 0%,#2b4a7e 100%);color:#fff;padding:76px 0 68px}
   .eyebrow{color:#bcd3ef;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;margin-bottom:14px}
-  .hero h1{font-size:2.85rem;line-height:1.06;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
-  .hero .lede{font-size:1.18rem;color:#e8eefb;max-width:720px;margin-bottom:14px;font-weight:400}
-  .hero .meta{color:#a9c2e4;font-size:.95rem;margin-bottom:28px}
+  .hero h1{font-size:3rem;line-height:1.05;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+  .hero .lede{font-size:1.22rem;color:#e8eefb;max-width:720px;margin-bottom:14px;font-weight:400}
+  .hero .meta{color:#a9c2e4;font-size:.95rem;margin-bottom:30px}
   .btns{display:flex;flex-wrap:wrap;gap:12px}
   .btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;font-size:.95rem}
   .btn-primary{background:#fff;color:var(--navy)}
   .btn-primary:hover{background:#eaf1fb;text-decoration:none}
   .btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
   .btn-ghost:hover{border-color:#fff;text-decoration:none}
-  /* hero photo */
-  .hero-photo{flex:none;width:236px;height:236px;border-radius:20px;overflow:hidden;position:relative;
-    border:4px solid rgba(255,255,255,.22);box-shadow:0 14px 44px rgba(0,0,0,.32);
-    background:linear-gradient(135deg,#274475 0%,#2E75B6 100%)}
-  .hero-photo .mono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-size:3.6rem;font-weight:800;color:#cfe0f5;letter-spacing:.04em}
-  .hero-photo img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
-  @media(max-width:760px){
-    header.hero .wrap{flex-direction:column-reverse;align-items:flex-start;gap:28px}
-    .hero h1{font-size:2.1rem}.hero .lede{font-size:1.05rem}
-    .hero-photo{width:132px;height:132px;border-radius:16px}
-    .hero-photo .mono{font-size:2.2rem}
-  }
+  @media(max-width:640px){.hero h1{font-size:2.1rem}.hero .lede{font-size:1.05rem}}
 
   /* METRIC STRIP */
   .metrics{background:var(--soft);border-bottom:1px solid var(--line)}
   .metrics .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:30px 24px;text-align:center}
-  .metric-ico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:#eaf1fb;color:var(--accent);margin-bottom:10px}
-  .metric-ico svg{width:22px;height:22px}
   .metric b{display:block;font-size:1.7rem;color:var(--navy);font-weight:800;letter-spacing:-.02em}
   .metric span{font-size:.85rem;color:var(--grey)}
   @media(max-width:720px){.metrics .wrap{grid-template-columns:repeat(2,1fr)}}
@@ -77,56 +61,21 @@
   @media(max-width:720px){.grid{grid-template-columns:1fr}}
   .card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff;transition:.18s;display:flex;flex-direction:column}
   .card:hover{border-color:var(--accent);box-shadow:0 8px 26px rgba(31,56,100,.09);transform:translateY(-2px)}
-  .card-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .card-ico{flex:none;width:40px;height:40px;border-radius:10px;background:#eaf1fb;color:var(--navy);display:flex;align-items:center;justify-content:center}
-  .card-ico svg{width:22px;height:22px}
-  .tag{background:#eaf1fb;color:var(--navy);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
-  .tag.solo{align-self:flex-start;margin-bottom:14px}
+  .tag{align-self:flex-start;background:#eaf1fb;color:var(--navy);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:14px}
   .card h3{font-size:1.16rem;color:var(--ink);font-weight:700;margin-bottom:8px;line-height:1.3}
   .card p{color:var(--grey);font-size:.96rem;margin-bottom:16px;flex:1}
   .card .go{font-weight:600;font-size:.9rem}
-  .card .go + .go{margin-left:16px}
-
-  /* VIDEO THUMBNAILS */
-  .thumb{display:block;position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;
-    margin-bottom:16px;background-color:#12233f;background-size:cover;background-position:center;border:1px solid var(--line)}
-  .thumb.alt{background-image:linear-gradient(135deg,#1F3864 0%,#2E75B6 100%)}
-  .thumb .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:56px;height:56px;background:rgba(255,255,255,.92);border-radius:50%;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.28);transition:.15s}
-  .thumb:hover .play{background:#fff;transform:translate(-50%,-50%) scale(1.06)}
-  .thumb .play svg{width:24px;height:24px;color:var(--navy);margin-left:3px}
-  .thumb .vlabel{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;
-    font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:6px}
+  .subhead{font-size:1.15rem;font-weight:700;color:var(--navy);margin:38px 0 18px;padding-bottom:8px;border-bottom:2px solid var(--line)}
 
   /* CONTACT */
   .contact{background:var(--navy);color:#fff;text-align:center}
   .contact h2{color:#fff}
   .contact p{color:#c9d7ee;max-width:560px;margin:0 auto 26px}
   footer{background:#16294a;color:#8fa6c8;text-align:center;padding:26px 0;font-size:.85rem}
+  .hidden-note{background:#fff8e1;border:1px dashed #e0b400;color:#7a5c00;font-size:.85rem;padding:10px 14px;border-radius:8px;margin-bottom:24px}
 </style>
 </head>
 <body>
-
-<!-- ============ ICON SPRITE (inline SVG, no dependencies) ============ -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
-  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/><path d="M9 13h6M9 17h4"/></symbol>
-  <symbol id="i-slides" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></symbol>
-  <symbol id="i-dashboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-7M12 21V5M18 21v-10"/></symbol>
-  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></symbol>
-  <symbol id="i-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l7 4V6l-7 4H4z"/><path d="M18 9a4 4 0 010 6"/></symbol>
-  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.4-5-1.4-8-1v13c3-.4 6-.4 8 1 2-1.4 5-1.4 8-1V5c-3-.4-6-.4-8 1z"/><path d="M12 6v13"/></symbol>
-  <symbol id="i-patent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></symbol>
-  <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 00-4 10c1 1 1.5 2 1.5 3h5c0-1 .5-2 1.5-3a6 6 0 00-4-10z"/><path d="M9.5 21h5"/></symbol>
-  <symbol id="i-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></symbol>
-  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a1 1 0 011-1h4a1 1 0 011 1v2H9z"/><path d="M9 12h6M9 16h6"/></symbol>
-  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></symbol>
-  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0111 0"/><path d="M16.5 5.2a3.2 3.2 0 010 5.6M21 19a5.5 5.5 0 00-3.8-5.2"/></symbol>
-  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3.2l2.65 5.37 5.93.86-4.29 4.18 1.01 5.9L12 16.7l-5.31 2.81 1.01-5.9L3.42 9.43l5.93-.86z"/></symbol>
-  <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.6 9c-.5-.95-1.5-1.5-2.7-1.5-1.55 0-2.6.85-2.6 2 0 2.9 5.4 1.45 5.4 4.4 0 1.25-1.15 2.2-2.9 2.2-1.35 0-2.45-.6-2.95-1.6M12 6.1v11.8"/></symbol>
-  <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
-</svg>
 
 <nav>
   <div class="wrap">
@@ -146,32 +95,25 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="hero-text">
-      <div class="eyebrow">Marketing Executive · CMO &amp; VP Product Marketing</div>
-      <h1>Category creation, go-to-market &amp;<br>AI-era positioning for enterprise B2B.</h1>
-      <p class="lede">25+ years turning deeply technical products into positioning, pipeline, and market leadership at IBM, Pure Storage, Hitachi Vantara, HPE, and more. An engineer turned marketer who builds the narrative and the teams and systems that scale it.</p>
-      <p class="meta">Cedar Park, TX · Open to remote &amp; relocation</p>
-      <div class="btns">
-        <!-- EDIT: drop your résumé PDF into /assets and keep this filename, or update the href -->
-        <a class="btn btn-primary" href="assets/Scott_Baker_Resume.pdf">Download résumé</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/scott-s-baker/">LinkedIn</a>
-        <a class="btn btn-ghost" href="mailto:sbaker83@gmail.com">Email</a>
-      </div>
-    </div>
-    <!-- EDIT: save your headshot as assets/scott-baker.jpg (square works best). Until then, a monogram shows. -->
-    <div class="hero-photo">
-      <span class="mono">SB</span>
-      <img src="assets/scott-baker.jpg" alt="Scott Baker" onerror="this.remove()" />
+    <div class="eyebrow">Marketing Executive · CMO &amp; VP Product Marketing</div>
+    <h1>Category creation, go-to-market &amp;<br>AI-era positioning for enterprise B2B.</h1>
+    <p class="lede">25+ years turning deeply technical products into positioning, pipeline, and market leadership at IBM, Pure Storage, Hitachi Vantara, HPE, and more. An engineer turned marketer who builds the narrative and the teams and systems that scale it.</p>
+    <p class="meta">Cedar Park, TX · Open to remote &amp; relocation</p>
+    <div class="btns">
+      <!-- EDIT: drop your résumé PDF into /assets and keep this filename, or update the href -->
+      <a class="btn btn-primary" href="assets/Scott_Baker_Resume.pdf">Download résumé</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/scott-s-baker/">LinkedIn</a>
+      <a class="btn btn-ghost" href="mailto:sbaker83@gmail.com">Email</a>
     </div>
   </div>
 </header>
 
 <div class="metrics">
   <div class="wrap">
-    <div class="metric"><span class="metric-ico"><svg><use href="#i-users"/></svg></span><b>45+</b><span>Global marketing team built &amp; led</span></div>
-    <div class="metric"><span class="metric-ico"><svg><use href="#i-star"/></svg></span><b>#1</b><span>Analyst leadership position</span></div>
-    <div class="metric"><span class="metric-ico"><svg><use href="#i-dollar"/></svg></span><b>$6B USD</b><span>Revenue attainment from ABM/GTM</span></div>
-    <div class="metric"><span class="metric-ico"><svg><use href="#i-trend"/></svg></span><b>240%</b><span>Partner revenue growth in 18 mo.</span></div>
+    <div class="metric"><b>45+</b><span>Global marketing team built &amp; led</span></div>
+    <div class="metric"><b>#1</b><span>Analyst leadership position</span></div>
+    <div class="metric"><b>$6B USD</b><span>Revenue attainment from ABM/GTM</span></div>
+    <div class="metric"><b>240%</b><span>Partner revenue growth in 18 mo.</span></div>
   </div>
 </div>
 
@@ -191,25 +133,25 @@
     <p class="sec-intro">The core of executive marketing leadership isn't the deliverables; it's the team that produces them. These are the systems I use to assess talent honestly, plan succession, and align people to strategy. Each is evidence of how I lead, not just what I ship.</p>
     <div class="grid">
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-slides"/></svg></span><span class="tag">Presentation</span></div>
+        <span class="tag">Presentation</span>
         <h3>The Role of Product Marketing</h3>
         <p>How I define the PMM function and set expectations for a high-performing team, including the operating framework I use to align, onboard, and hold a team accountable to measurable outcomes.</p>
         <a class="go" href="assets/What-Is-PMM.pptx">Read →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-dashboard"/></svg></span><span class="tag">Interactive Dashboard</span></div>
+        <span class="tag">Interactive Dashboard</span>
         <h3>Team Talent, Org &amp; Strategic Alignment Framework</h3>
         <p>A talent-assessment system I built and run to maintain line-of-site on the org landscape, a performance-by-potential 9-box, an 8-competency skills matrix, and objective-level strategic alignment across a 14-person global PMM team. (Anonymized sample.)</p>
         <a class="go" href="code/Storage_PMM_Org_Talent_Dashboard.html">Explore the dashboard →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-grid"/></svg></span><span class="tag">Operating Framework</span></div>
+        <span class="tag">Operating Framework</span>
         <h3>Product Marketing RACI: How I Align the PMM Role</h3>
         <p>A responsibility matrix mapping marketing deliverables across the full go-to-market structure for clear accountability: how I remove ambiguity, end turf wars, and position PMM as the connective tissue of go-to-market.</p>
         <a class="go" href="code/PMM_RACI_Matrix.html">Explore the matrix →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-megaphone"/></svg></span><span class="tag">Leading Through Change</span></div>
+        <span class="tag">Leading Through Change</span>
         <h3>Organizational Change Communication</h3>
         <p>A real communication to my team through an org change. This is how I lead people through uncertainty with transparency and steadiness.</p>
         <a class="go" href="writing/PMM org email.pdf">Read →</a>
@@ -225,25 +167,25 @@
     <p class="sec-intro">I lead by defining how my organization thinks and communicates. These are the category POVs and standards of clarity I use to align product, sales, and marketing. This is also how I coach my teams to produce on their own. Read each as evidence of the standard I set, and how I scale it through a team.</p>
     <div class="grid">
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-doc"/></svg></span><span class="tag">Work Sample</span></div>
+        <span class="tag">Work Sample</span>
         <h3>Product Messaging Guide (Template &amp; Annotated Example)</h3>
         <p>The single source of truth that keeps positioning consistent across teams, regions, and partners with annotated guidance showing the standard I set for a PMM team. Built around a fictional product.</p>
         <a class="go" href="assets/Product_Messaging_Guide_Sample.pdf">View sample →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-doc"/></svg></span><span class="tag">Article</span></div>
+        <span class="tag">Article</span>
         <h3>From product-centric to category-led</h3>
         <p>The category-repositioning playbook I set as direction for my org and use to align product, sales, and analysts. Written so my team can run it, not just admire it.</p>
         <a class="go" href="writing/repositioning-mature-portfolio.html">Read →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-slides"/></svg></span><span class="tag">Presentation</span></div>
+        <span class="tag">Presentation</span>
         <h3>Ideal Client/Persona Profile</h3>
         <p>The depth of buyer understanding I require before my team builds anything. This is a model for the persona and journey rigor I hold the team to, using the IT Architect as the example.</p>
         <a class="go" href="assets/Buyer Persona Example.pptx">Read →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-bulb"/></svg></span><span class="tag">POV</span></div>
+        <span class="tag">POV</span>
         <h3>Marketing the AI era for technical buyers</h3>
         <p>The market POV I use to point my team's positioning in one direction. This is how I create strategic alignment before a single asset gets built.</p>
         <a class="go" href="writing/marketing-ai-era-technical-buyers.html">Read →</a>
@@ -259,43 +201,37 @@
     <p class="sec-intro">A facilitated, multi-part enablement program I built to teach go-to-market teams to lead with purpose and value, moving from WHY to HOW to WHAT, across both business and technical conversations. It's how I turn positioning into something the field can actually deliver.</p>
     <div class="grid">
       <div class="card">
-        <a class="thumb" href="https://youtu.be/GBPHe4jo0Go" style="background-image:url('https://img.youtube.com/vi/GBPHe4jo0Go/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Sales Enablement Program Intro</span>
+        <span class="tag">Sales Enablement Program Intro</span>
         <h3>Part 1: Start With WHY: Program Introduction</h3>
         <p>Sets up the enablement program and the core premise: buyers commit to purpose before product, so teams must learn to lead with WHY before HOW and WHAT.</p>
         <a class="go" href="https://youtu.be/GBPHe4jo0Go">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://youtu.be/Rh9HUWIpzfU" style="background-image:url('https://img.youtube.com/vi/Rh9HUWIpzfU/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Part 3a: Facilitated Session</span>
+        <span class="tag">Part 3a: Facilitated Session</span>
         <h3>Part 2: Defining Our WHY</h3>
         <p>A live, facilitated working session that guides the team to articulate its collective WHY (the belief that anchors every downstream message).</p>
         <a class="go" href="https://youtu.be/Rh9HUWIpzfU">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://youtu.be/X1rUkmPCvcg" style="background-image:url('https://img.youtube.com/vi/X1rUkmPCvcg/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Facilitation Method</span>
+        <span class="tag">Facilitation Method</span>
         <h3>Part 3: The WHY Whiteboard: Method &amp; Live Session</h3>
         <p>Teaches the whiteboard facilitation technique, then demonstrates it in real time and in a repeatable way for any leader to run the exercise with their own team.</p>
         <a class="go" href="https://youtu.be/X1rUkmPCvcg">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://youtu.be/WB2jimFLlzE" style="background-image:url('https://img.youtube.com/vi/WB2jimFLlzE/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Whiteboard · Business</span>
+        <span class="tag">Whiteboard · Business</span>
         <h3>Part 4a: HOW &amp; WHAT: Business Value Whiteboard</h3>
         <p>A real-time whiteboard translating the WHY into business-value messaging for economic and executive buyers with outcomes first, capability as evidence.</p>
         <a class="go" href="https://youtu.be/WB2jimFLlzE">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://youtu.be/jHXcFq8xsok" style="background-image:url('https://img.youtube.com/vi/jHXcFq8xsok/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Whiteboard · Technical</span>
+        <span class="tag">Whiteboard · Technical</span>
         <h3>Part 4b: HOW &amp; WHAT: Technical Value Whiteboard</h3>
         <p>The technical counterpart: translating capability into credible, technical proof for engineers and architects, without losing the business narrative.</p>
         <a class="go" href="https://youtu.be/jHXcFq8xsok">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://youtu.be/BohB31h_MKQ" style="background-image:url('https://img.youtube.com/vi/BohB31h_MKQ/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Best Practices</span>
+        <span class="tag">Best Practices</span>
         <h3>Part 5: Whiteboarding Best Practices</h3>
         <p>Reinforcement and best practices that make the method stick by turning a one-time workshop into a durable, repeatable team capability.</p>
         <a class="go" href="https://youtu.be/BohB31h_MKQ">Watch →</a>
@@ -311,13 +247,13 @@
     <p class="sec-intro">My published work, patents, and analyst leadership are the credibility and air cover my teams win with, and the technical depth I bring to guiding a marketing organization as a peer to product and engineering. Each is proof of the expertise I put to work for a team.</p>
     <div class="grid">
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-book"/></svg></span><span class="tag">Book</span></div>
+        <span class="tag">Book</span>
         <h3>Intelligent Data Governance for Dummies</h3>
         <p>Author. The kind of category authority I build and then arm my teams to sell in a book-length explainer that made dark-data and governance legible to technical and business buyers alike.</p>
         <a class="go" href="publications/data-governance-for-dummies.pdf">Details →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-patent"/></svg></span><span class="tag">Patent · Pending</span></div>
+        <span class="tag">Patent · Pending</span>
         <h3>Context-Aware Interactive Bezel for Storage System States</h3>
         <p>Inventor. The product-level thinking I bring to the table. This is patented IP that earns credibility with the product and engineering leaders I partner with.</p>
         <a class="go" href="publications/IBM_FlashSystem_Interactive_LED_Bezel_Patent_Draft.pdf">Details →</a>
@@ -334,50 +270,43 @@
     <p class="sec-intro">I set the bar as a spokesperson and thought leader, then coach my team to own the stage themselves. Each of these is an example of the storytelling and executive presence I model and scale across the organization.</p>
     <div class="grid">
       <div class="card">
-        <a class="thumb" href="https://www.youtube.com/watch?v=MiCK6_jZigo" style="background-image:url('https://img.youtube.com/vi/MiCK6_jZigo/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Lightboard</span>
+        <span class="tag">Lightboard</span>
         <h3>5 Fundamentals of AI Data Services</h3>
         <p>The executive-communication standard I set for my team, distilling complex AI data services into a clear, credible narrative for technical and business audiences.</p>
         <a class="go" href="https://www.youtube.com/watch?v=MiCK6_jZigo">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://youtu.be/-UJ5Glm6KC0" style="background-image:url('https://img.youtube.com/vi/-UJ5Glm6KC0/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Webcast</span>
+        <span class="tag">Webcast</span>
         <h3>Conveying Differentiated Value in Client Engagements</h3>
         <p>A field-enablement webcast series I created to sharpen how sellers and partners convey differentiated value. This is an example of how I scale consistent messaging across a global field team.</p>
         <a class="go" href="https://youtu.be/-UJ5Glm6KC0">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb alt" href="https://mediacenter.ibm.com/media/IBM%20Storage%20FlashSystem%3A%20Optimizing%20VMware%20for%20Cost%2C%20Simplicity%20and%20Resilience/1_9iv8n2v0"><span class="play"><svg><use href="#i-play"/></svg></span><span class="vlabel">IBM MediaCenter</span></a>
-        <span class="tag solo">Webinar</span>
+        <span class="tag">Webinar</span>
         <h3>Optimizing VMware for Cost, Simplicity and Efficiency</h3>
         <p>How I partner cross-functionally to bring a story to market via a session I co-hosted with a product manager on optimizing virtual environments without compromising cyber resiliency.</p>
         <a class="go" href="https://mediacenter.ibm.com/media/IBM%20Storage%20FlashSystem%3A%20Optimizing%20VMware%20for%20Cost%2C%20Simplicity%20and%20Resilience/1_9iv8n2v0">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://youtu.be/_NtxT9iZryQ" style="background-image:url('https://img.youtube.com/vi/_NtxT9iZryQ/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Keynote</span>
+        <span class="tag">Keynote</span>
         <h3>Hitachi NEXT Mainstage Keynote</h3>
         <p>Keynote at the annual user conference and technology symposium hosted by Hitachi Vantara that brought together data pioneers, developers, and enterprise leaders to explore data management, internet of things (IoT) innovations, and digital transformation strategies.</p>
         <a class="go" href="https://youtu.be/_NtxT9iZryQ">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb alt" href="https://www.thecube.net/events/nvidia/gtc24/content/Videos/127f94d0-a01f-4ec3-807c-2b0487f34556"><span class="play"><svg><use href="#i-play"/></svg></span><span class="vlabel">theCUBE · NVIDIA GTC</span></a>
-        <span class="tag solo">Press Interview</span>
+        <span class="tag">Press Interview</span>
         <h3>TheCUBE Interview at Nvidia GTC</h3>
         <p>Representing the company as its external voice with John Furrier on TheCUBE on the future of AI-ready infrastructure and storage for AI workloads. The analyst and press presence I model for my team.</p>
         <a class="go" href="https://www.thecube.net/events/nvidia/gtc24/content/Videos/127f94d0-a01f-4ec3-807c-2b0487f34556">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://www.youtube.com/watch?v=5VqNmeKXij8" style="background-image:url('https://img.youtube.com/vi/5VqNmeKXij8/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">Podcast</span>
+        <span class="tag">Podcast</span>
         <h3>Becoming a Business-to-Human Marketer</h3>
         <p>The marketing philosophy I lead by on the B2B Engagement Podcast with Gavin Finn, on empathetic, business-to-human marketing and authentic customer connection.</p>
         <a class="go" href="https://www.youtube.com/watch?v=5VqNmeKXij8">Watch →</a>
       </div>
       <div class="card">
-        <a class="thumb" href="https://www.youtube.com/watch?v=Yn0yvzHXBU4" style="background-image:url('https://img.youtube.com/vi/Yn0yvzHXBU4/hqdefault.jpg')"><span class="play"><svg><use href="#i-play"/></svg></span></a>
-        <span class="tag solo">On Stage</span>
+        <span class="tag">On Stage</span>
         <h3>Creating Modern Hybrid Cloud Architectures</h3>
         <p>Keynoting at Bloomberg on hybrid cloud’s role in scalability, reliability, and sustainability. This is the executive stage presence I set as the standard and coach in others.</p>
         <a class="go" href="https://www.youtube.com/watch?v=Yn0yvzHXBU4">Watch →</a>
@@ -393,25 +322,25 @@
     <p class="sec-intro">As an executive I don’t ship production code, I build prototypes and tools to prove a concept, set technical direction, and earn the trust of the engineers and product leaders I lead and partner with. Each of these is the fluency behind my judgment, not a job description.</p>
     <div class="grid">
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-calc"/></svg></span><span class="tag">Interactive Tool</span></div>
+        <span class="tag">Interactive Tool</span>
         <h3>Enterprise Search Business Impact Calculator</h3>
         <p>An interactive value model that turns a technical capability into a boardroom business case with adjustable inputs, live ROI, every figure backed by a visible formula. How I move product value into an executive conversation.</p>
         <a class="go" href="code/Enterprise_Search_Calculator.html">Open the calculator →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-slides"/></svg></span><span class="tag">Presentation</span></div>
+        <span class="tag">Presentation</span>
         <h3>Market-intelligence signal monitor</h3>
         <p>A prototype I built as a proof of concept for my team. This is a system that ingests competitor, analyst, and press signals and flags when our narrative needs to move. Setting technical direction, not writing production code.</p>
-        <a class="go" href="assets/Prism-v1_Pitch_Deck.pdf">View pitch →</a>
+        <a class="go" href="assets/Prism-v1_Pitch_Deck.pdf">View code →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-clipboard"/></svg></span><span class="tag">PRD</span></div>
+        <span class="tag">PRD</span>
         <h3>Product Requirements Document</h3>
         <p>How I translate a vision into something a team can build (an original AI-agent design spec I authored to force earlier, accountable positioning decisions, assigning every market signal a decision type, an owner, and a commit-by date).</p>
-        <a class="go" href="assets/PMM Decision Intelligence Agent v1.0.pdf">View PRD →</a>
+        <a class="go" href="assets/PMM Decision Intelligence Agent v1.0.pdf">View code →</a>
       </div>
       <div class="card">
-        <div class="card-top"><span class="card-ico"><svg><use href="#i-code"/></svg></span><span class="tag">Application Code</span></div>
+        <span class="tag">Application Code</span>
         <h3>PMM Decision-Intelligence Agent</h3>
         <p>The working prototype behind the spec. This is proof I can go from strategy to a functional build, and lead engineers credibly because I’ve done the work myself.</p>
         <a class="go" href="code/prism.zip">View code →</a>
